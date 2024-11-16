@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+
+    <!-- Enlace a Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Aos css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Shop Shere</title>
+</head>
+<body>
+    <header>
+<!-- menu de navegacion -->
+        <nav class="navbar navbar-expand-lg menu_navegacion">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse nav_right" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-link"  href="#">Home</a>
+                <a class="nav-link"  href="#">Productos</a>
+                <a class="nav-link"  href="#">Cuenta</a>
+                <a class="nav-link"  href="#"><i class="bi bi-cart3"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<!-- carrusel banner -->
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="imagenes/presentacion.webp" class="d-block w-100" alt="Banner presentacion">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/Banner-2.webp" class="d-block w-100" alt="Descuentos comienzo de clases ">
+            </div>
+            <div class="carousel-item">
+                <img src="imagenes/Banner-Envio-3.webp" class="d-block w-100" alt="Envio gratis a todo el pais">
+            </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+</header>
+<main>
+    <div class="container-fluid">
+<!-- presentacion -->
+<section class="presentacion-sitio">
+    <div class="contenedor-texto">
+        <h2>Bienvenido a ShopSphere</h2>
+        <p>
+            En ShopSphere, creemos en hacer tus compras más simples, rápidas y accesibles. 
+            Nuestra misión es ofrecerte una experiencia de compra única, con productos de alta calidad 
+            y un servicio excepcional. ¡Todo lo que necesitas está a un clic de distancia!
+        </p>
+        <ul class="valores">
+            <li>🛒 Amplia variedad de productos</li>
+            <li>🚚 Envíos rápidos y seguros</li>
+            <li>💳 Métodos de pago confiables</li>
+            <li>📞 Soporte 24/7</li>
+        </ul>
+        <a href="#catalogo" class="btn-explorar">Explorar Catálogo</a>
+    </div>
+    <div class="contenedor-imagen">
+        <img src="tienda.jpg" alt="Tienda Online" />
+    </div>
+</section>
+<section class="envios-rapidos">
+    <div class="contenedor-texto">
+        <h2>Envíos Rápidos y Seguros</h2>
+        <p>
+            En ShopSphere, nos aseguramos de que tus compras lleguen a tiempo y en perfectas condiciones. 
+            Contamos con servicios de entrega confiables que garantizan una experiencia sin complicaciones.
+        </p>
+        <ul class="beneficios-envios">
+            <li>🚚 Entregas en 24-48 horas en zonas principales.</li>
+            <li>📦 Empaque seguro para proteger tus productos.</li>
+            <li>🌍 Cobertura en todo el país.</li>
+            <li>🔄 Seguimiento en tiempo real de tus pedidos.</li>
+        </ul>
+        <a href="#catalogo" class="btn-comprar">¡Comienza a Comprar!</a>
+    </div>
+    <div class="contenedor-imagen">
+        <img src="envios.jpg" alt="Envíos Rápidos y Seguros">
+    </div>
+</section>
+</div>
+
+</main>
+<footer>
+
+</footer>
+<!-- JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Aos javascript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Aos -->
+    <script>
+        AOS.init();
+    </script>
+<!-- javascript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
