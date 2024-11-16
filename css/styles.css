@@ -36,36 +36,6 @@ html {
   }
 }
 
-/* carrusel del sitio */
-/* Para pantallas grandes (PC) */
-@media (min-width: 992px) {
-  .carousel-inner {
-      max-height: 400px; /* Altura máxima del carrusel */
-  }
-
-  .carousel-item {
-      height: 100%; /* Las imágenes ocupan el 100% de la altura del carrusel */
-  }
-
-  .carousel-item img {
-      width: 100%; /* Las imágenes ocupan el 100% del ancho */
-      height: auto; /* Mantienen la proporción al ajustar el ancho */
-      object-fit: cover; /* Hace que la imagen cubra el contenedor sin distorsionarse */
-      object-position: center; /* Centra la imagen en el contenedor */
-  }
-
-  /* Opcional: Puedes ajustar los controles si es necesario */
-  .carousel-control-prev,
-  .carousel-control-next {
-      width: 5%; /* Reduce el tamaño de los controles */
-  }
-
-  .carousel-indicators {
-      bottom: 10px; /* Ajusta la posición de los puntos indicadores */
-  }
-}
-
-
 .presentacion_envio {
   display: flex;
   align-items: center;
