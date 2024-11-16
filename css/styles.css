@@ -7,34 +7,64 @@ html {
   background-color: #353437;
 }
 
-.nav_right {
+.nav_left {
   display: flex;
   justify-content: end;
 }
-.nav_right a {
+.nav_left a {
   font-size: 2rem;
   margin: 0.9rem;
   color: white;
 }
-.nav_right a:hover {
+.nav_left a:hover {
   color: red;
 }
 @media (max-width: 76.8rem) {
-  .nav_right {
+  .nav_left {
     flex-direction: column;
     align-items: center;
   }
-  .nav_right a {
+  .nav_left a {
     font-size: 1.6rem;
     margin: 0.3rem;
   }
 }
 @media (max-width: 48rem) {
-  .nav_right a {
+  .nav_left a {
     font-size: 1.4rem;
     margin: 0.2rem;
   }
 }
+
+/* carrusel del sitio */
+/* Para pantallas grandes (PC) */
+@media (min-width: 992px) {
+  .carousel-inner {
+      max-height: 400px; /* Altura máxima del carrusel */
+  }
+
+  .carousel-item {
+      height: 100%; /* Las imágenes ocupan el 100% de la altura del carrusel */
+  }
+
+  .carousel-item img {
+      width: 100%; /* Las imágenes ocupan el 100% del ancho */
+      height: auto; /* Mantienen la proporción al ajustar el ancho */
+      object-fit: cover; /* Hace que la imagen cubra el contenedor sin distorsionarse */
+      object-position: center; /* Centra la imagen en el contenedor */
+  }
+
+  /* Opcional: Puedes ajustar los controles si es necesario */
+  .carousel-control-prev,
+  .carousel-control-next {
+      width: 5%; /* Reduce el tamaño de los controles */
+  }
+
+  .carousel-indicators {
+      bottom: 10px; /* Ajusta la posición de los puntos indicadores */
+  }
+}
+
 
 .presentacion_envio {
   display: flex;
@@ -45,7 +75,6 @@ html {
   margin-top: 2rem;
 }
 .presentacion_envio .contenedor-texto {
-  flex: 1;
   margin-right: 2rem;
 }
 .presentacion_envio .contenedor-texto h2 {

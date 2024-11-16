@@ -5,7 +5,7 @@ html {
   background-color: #353437;
 }
 
-.nav_right {
+.nav_left {
   display: flex;
   justify-content: end;
 
@@ -47,7 +47,6 @@ html {
   margin-top: 2rem;
 
   .contenedor-texto {
-      flex: 1;
       margin-right: 2rem;
 
       h2 {
