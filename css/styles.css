@@ -4,7 +4,7 @@ html {
 }
 
 .menu_navegacion {
-  background-color: black;
+  background-color: #353437;
 }
 
 .nav_right {
@@ -36,42 +36,47 @@ html {
   }
 }
 
-.presentacion-sitio {
+.presentacion_envio {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  background-color: #f8f9fa;
+  background-color: #53576b;
+  margin-top: 2rem;
 }
-.presentacion-sitio .contenedor-texto {
+.presentacion_envio .contenedor-texto {
   flex: 1;
   margin-right: 2rem;
 }
-.presentacion-sitio .contenedor-texto h2 {
+.presentacion_envio .contenedor-texto h2 {
+  color: white;
   font-size: 2.4rem;
   margin-bottom: 1rem;
 }
-.presentacion-sitio .contenedor-texto p {
+.presentacion_envio .contenedor-texto p {
+  color: white;
   font-size: 1.6rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
-.presentacion-sitio .contenedor-texto .valores {
+.presentacion_envio .contenedor-texto .listas {
   list-style: none;
   padding: 0;
 }
-.presentacion-sitio .contenedor-texto .valores li {
+.presentacion_envio .contenedor-texto .listas li {
+  color: white;
   font-size: 1.4rem;
   margin: 0.5rem 0;
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
 }
-.presentacion-sitio .contenedor-texto .valores li:before {
+.presentacion_envio .contenedor-texto .listas li:before {
   content: "✔";
   color: #28a745;
   margin-right: 0.5rem;
 }
-.presentacion-sitio .contenedor-texto .btn-explorar {
+.presentacion_envio .contenedor-texto .btn {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.8rem 1.5rem;
@@ -81,102 +86,28 @@ html {
   border-radius: 0.5rem;
   font-size: 1.4rem;
 }
-.presentacion-sitio .contenedor-texto .btn-explorar:hover {
+.presentacion_envio .contenedor-texto .btn:hover {
   background-color: #0056b3;
 }
-.presentacion-sitio .contenedor-imagen {
+.presentacion_envio .contenedor-imagen {
   flex: 1;
 }
-.presentacion-sitio .contenedor-imagen img {
+.presentacion_envio .contenedor-imagen img {
   max-width: 100%;
   border-radius: 0.5rem;
 }
 @media (max-width: 768px) {
-  .presentacion-sitio {
+  .presentacion_envio {
     flex-direction: column;
   }
-  .presentacion-sitio .contenedor-texto {
+  .presentacion_envio .contenedor-texto {
     margin-right: 0;
     text-align: center;
   }
-  .presentacion-sitio .contenedor-texto .btn-explorar {
+  .presentacion_envio .contenedor-texto .btn {
     margin: 1rem auto;
   }
-  .presentacion-sitio .contenedor-imagen {
-    margin-top: 1.5rem;
-  }
-}
-
-.envios-rapidos {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3rem;
-  background-color: #f9f9f9;
-}
-.envios-rapidos .contenedor-texto {
-  flex: 1;
-  margin-right: 2rem;
-}
-.envios-rapidos .contenedor-texto h2 {
-  font-size: 2.4rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-.envios-rapidos .contenedor-texto p {
-  font-size: 1.6rem;
-  line-height: 1.5;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-.envios-rapidos .contenedor-texto .beneficios-envios {
-  list-style: none;
-  padding: 0;
-}
-.envios-rapidos .contenedor-texto .beneficios-envios li {
-  font-size: 1.4rem;
-  margin: 0.5rem 0;
-  display: flex;
-  align-items: center;
-}
-.envios-rapidos .contenedor-texto .beneficios-envios li:before {
-  content: "✔";
-  color: #28a745;
-  margin-right: 0.5rem;
-}
-.envios-rapidos .contenedor-texto .btn-comprar {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.8rem 1.5rem;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-size: 1.4rem;
-}
-.envios-rapidos .contenedor-texto .btn-comprar:hover {
-  background-color: #0056b3;
-}
-.envios-rapidos .contenedor-imagen {
-  flex: 1;
-}
-.envios-rapidos .contenedor-imagen img {
-  max-width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-@media (max-width: 768px) {
-  .envios-rapidos {
-    flex-direction: column;
-  }
-  .envios-rapidos .contenedor-texto {
-    margin-right: 0;
-    text-align: center;
-  }
-  .envios-rapidos .contenedor-texto .btn-comprar {
-    margin: 1rem auto;
-  }
-  .envios-rapidos .contenedor-imagen {
+  .presentacion_envio .contenedor-imagen {
     margin-top: 1.5rem;
   }
 }
