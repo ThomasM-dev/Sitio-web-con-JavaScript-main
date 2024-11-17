@@ -1,19 +1,17 @@
 let productos = document.getElementById("productos");
-let url = 'https://api.escuelajs.co/api/v1/products';
+let url = 'https://fakestoreapi.com/products';
 
 async function Mostrarproductos() {
     let response = await fetch(url);
     let data = await response.json();
-    let productosLimitados = data.slice (0, 30)
-    console.log(productosLimitados);
     let productosHTML = '';
-    productosLimitados.forEach(producto => {
-    let imagen = producto.images[2];
-    productosHTML += `<div class="container">
+    data.forEach(producto => {
+    let imagen = producto.image;
+    productosHTML += `<div class="container lista-productos">
             <h3>${producto.title}</h3>
             <p>${producto.description}</p>
             <p>Price: $${producto.price}</p>
-            <img src="${imagen}" alt="">
+            <img src="${imagen}" class = "img-fluid" alt="">
         </div>`;
     });
     productos.innerHTML = productosHTML;
