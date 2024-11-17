@@ -261,6 +261,7 @@ body {
 }
 
 // Estilos pagina productos
+
 .tarjetas {
   display: flex;
   flex-direction: column;
@@ -306,8 +307,46 @@ body {
           font-weight: bold;
       }
   }
+  label {
+    font-size: 1.4rem;
+    color: #333;
+    margin-right: 0.5rem;
 }
 
+input {
+    width: 80px;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+
+    &:focus {
+        outline: none;
+        border-color: brown;
+    }
+}
+
+button {
+    padding: 0.6rem 1rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: brown;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+}
 
 @media (max-width: 576px) {
     .tarjeta_titulo {
