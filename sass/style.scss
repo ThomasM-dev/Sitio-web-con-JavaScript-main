@@ -29,7 +29,6 @@ html {
     }
   }
 
-
   @media (max-width: 48rem) { 
     a {
       font-size: 1.4rem; 
@@ -38,91 +37,175 @@ html {
   }
 }
 
-
-
+// presentacion y envio
 .presentacion_envio {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
-  background-color:#53576b;
-  margin-top: 2rem;
+  background-color: #53576b;
+  margin-top: 1rem;
 
   .contenedor-texto {
-      margin-right: 2rem;
+    margin-right: 2rem;
 
-      h2 {
+    h2 {
+      color: white;
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: white;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .listas {
+      list-style: none;
+      padding: 0;
+
+      li {
         color: white;
-          font-size: 2.4rem;
-          margin-bottom: 1rem;
+        font-size: 1.4rem;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+
+        &:before {
+          content: "✔";
+          color: #28a745;
+          margin-right: 0.5rem;
+        }
       }
+    }
 
-      p {
-        color: white;
-          font-size: 1.6rem;
-          line-height: 1.5;
-          margin-bottom: 1.5rem;
+    .btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      background-color: black;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      font-size: 1.4rem;
+
+      &:hover {
+        background-color: brown;
       }
-
-      .listas {
-          list-style: none;
-          padding: 0;
-
-          li {
-            color: white;
-              font-size: 1.4rem;
-              margin: 0.5rem 0;
-              display: flex;
-              align-items: center;
-              margin-bottom: 30px;
-
-              &:before {
-                  content: "✔";
-                  color: #28a745;
-                  margin-right: 0.5rem;
-              }
-          }
-      }
-
-      .btn {
-          display: inline-block;
-          margin-top: 1.5rem;
-          padding: 0.8rem 1.5rem;
-          background-color: #007bff;
-          color: #fff;
-          text-decoration: none;
-          border-radius: 0.5rem;
-          font-size: 1.4rem;
-
-          &:hover {
-              background-color: #0056b3;
-          }
-      }
+    }
   }
 
   .contenedor-imagen {
-      flex: 1;
-
+    flex: 1;
       img {
-          max-width: 100%;
-          border-radius: 0.5rem;
-      }
+      max-width: 100%;
+      border-radius: 0.5rem;
+    }
   }
 
   @media (max-width: 768px) {
-      flex-direction: column;
+    flex-direction: column;
 
-      .contenedor-texto {
-          margin-right: 0;
-          text-align: center;
+    .contenedor-texto {
+      margin-right: 0;
+      text-align: center;
 
-          .btn {
-              margin: 1rem auto;
-          }
+      .btn {
+        margin: 1rem auto;
+      }
+    }
+
+    .contenedor-imagen {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+
+    .contenedor-texto {
+      h2 {
+        font-size: 2rem;
       }
 
-      .contenedor-imagen {
-          margin-top: 1.5rem;
+      p {
+        font-size: 1.4rem;
+      }
+
+      .btn {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .contenedor-imagen {
+      img {
+        border-radius: 0.3rem;
+      }
+    }
+  }
+}
+
+// Estilos del footer
+.footer {
+  background-color: #353437;
+  margin-top: 1rem;
+  padding: 20px;
+  text-align: center;
+
+  h2 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+      font-family: "Rubik Mono One", serif;
+      color: whitesmoke;
+  }
+
+  p {
+      margin: 5px 0;
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.7rem;
+  }
+
+  a {
+      color: #007bff; // Color de los enlaces
+      text-decoration: none; // Sin subrayado
+
+  }
+
+  .iconos-redes-sociales {
+      margin: 15px 0; // Espaciado entre el texto y los iconos
+
+      a {
+          margin: 0 10px;
+          font-size: 1.5rem; // Tamaño de los iconos
+          transition: color 0.3s ease, box-shadow 0.3s ease;
+
+          // Colores para cada icono
+          &.icono-twitter {
+              color: #1DA1F2; // Color de Twitter
+          }
+
+          &.icono-github {
+              color: white; // Color de GitHub
+          }
+
+          &.icono-linkedin {
+              color: #0077B5; // Color de LinkedIn
+          }
+
+          &.icono-instagram {
+              color: #C13584; // Color de Instagram
+          }
+
+          // Efecto hover
+          &:hover {
+              color: #fff; // Cambiar a blanco al pasar el ratón
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra al pasar el ratón
+          }
       }
   }
 }
