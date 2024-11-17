@@ -6,6 +6,15 @@ html {
 .menu_navegacion {
   background-color: #353437;
 }
+.menu_navegacion .logo-sitio {
+  max-width: 70px;
+  height: auto;
+  margin: 5px;
+  transition: transform 0.3s ease;
+}
+.menu_navegacion .logo-sitio:hover {
+  transform: scale(1.1);
+}
 
 .nav_left {
   display: flex;
