@@ -4,16 +4,33 @@ let url = 'https://fakestoreapi.com/products';
 async function Mostrarproductos() {
     let response = await fetch(url);
     let data = await response.json();
-    let productosHTML = '';
+    let productosHTML = `
+        <div class="container">
+            <div class="row">
+    `;
+
     data.forEach(producto => {
-    let imagen = producto.image;
-    productosHTML += `<div class="container lista-productos">
-            <h3>${producto.title}</h3>
-            <p>${producto.description}</p>
-            <p>Price: $${producto.price}</p>
-            <img src="${imagen}" class = "img-fluid" alt="">
-        </div>`;
+        let imagen = producto.image;
+        productosHTML += `
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+            <div class="card">
+                <img src="${producto.image}" class="card-img-top" alt="${producto.title}">
+                <div class="card-body">
+                    <h5 class="tarjeta_titulo">${producto.title}</h5>
+                    <p class="tarjeta_texto">${producto.description.slice(0, 100)}...</p>
+                    <p class="precio">$${producto.price}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
     });
+
+    productosHTML += `
+            </div>
+        </div>
+    `;
+
     productos.innerHTML = productosHTML;
 }
 

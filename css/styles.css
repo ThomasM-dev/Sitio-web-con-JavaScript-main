@@ -3,7 +3,9 @@ html {
   font-size: 62.5%;
 }
 
-
+body {
+  background: linear-gradient(to right, #000000, #7890a8, #304878, #181848);
+}
 
 .menu_navegacion {
   background-color: #353437;
@@ -219,6 +221,57 @@ html {
   transition: background-color 0.3s ease;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.card img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+.card .card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card .card-body .tarjeta_titulo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+.card .card-body .tarjeta_texto {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #6c757d;
+}
+.card .card-body .precio {
+  font-size: 1.4rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .tarjeta_titulo {
+    font-size: 1.4rem;
+  }
+  .tarjeta_texto {
+    font-size: 1.2rem;
+  }
+  .precio {
+    font-size: 1.6rem;
+  }
+}
 .footer {
   background-color: #353437;
   margin-top: 1rem;

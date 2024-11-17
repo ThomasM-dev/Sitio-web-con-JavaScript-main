@@ -260,6 +260,66 @@ body {
   }
 }
 
+// Estilos pagina productos
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+      height: 300px;
+      width: 100%; 
+      object-fit: cover;
+  }
+
+  .card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .tarjeta_titulo {
+          font-size: 1.6rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+      }
+
+      .tarjeta_texto {
+          font-size: 1.2rem;
+          margin-bottom: 1rem;
+          color: #6c757d;
+      }
+
+      .precio {
+          font-size: 1.4rem;
+          color: #28a745;
+          font-weight: bold;
+      }
+  }
+}
+
+
+@media (max-width: 576px) {
+    .tarjeta_titulo {
+        font-size: 1.4rem;
+    }
+    .tarjeta_texto {
+        font-size: 1.2rem;
+    }
+    .precio {
+        font-size: 1.6rem;
+    }
+}
+
 
 // Estilos del footer
 .footer {
