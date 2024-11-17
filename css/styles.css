@@ -3,6 +3,10 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  background: linear-gradient(to right, #000000, #7890a8, #304878, #181848);
+}
+
 .menu_navegacion {
   background-color: #353437;
 }
@@ -136,6 +140,85 @@ html {
   .presentacion_envio .contenedor-imagen img {
     border-radius: 0.3rem;
   }
+}
+
+.como-comprar h2 {
+  font-size: 2.8rem;
+  color: #333;
+}
+.como-comprar .card {
+  border: none;
+  border-radius: 0.5rem;
+}
+.como-comprar .card img {
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.como-comprar .card .card-title {
+  font-size: 1.6rem;
+  color: #007bff;
+}
+.como-comprar .card .card-text {
+  font-size: 1.4rem;
+  color: #555;
+}
+.como-comprar .card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+  .como-comprar h2 {
+    font-size: 2.4rem;
+  }
+  .como-comprar .card-title {
+    font-size: 1.4rem;
+  }
+  .como-comprar .card-text {
+    font-size: 1.2rem;
+  }
+}
+
+.contacto {
+  background-color: #121212;
+  padding: 5rem 0;
+}
+.contacto h2 {
+  font-size: 2.8rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+.contacto p {
+  font-size: 1.6rem;
+  color: #bbbbbb;
+  margin-bottom: 3rem;
+}
+.contacto .form-label {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+.contacto .form-control {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444444;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.contacto .form-control:focus {
+  background-color: #444444;
+  border-color: #007bff;
+  outline: none;
+}
+.contacto button {
+  font-size: 1.6rem;
+  background-color: #007bff;
+  border: none;
+  padding: 0.8rem 2rem;
+  color: #ffffff;
+  border-radius: 0.5rem;
+}
+.contacto button:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s ease;
 }
 
 .footer {
