@@ -261,7 +261,7 @@ body {
 }
 
 // Estilos pagina productos
-.card {
+.tarjetas {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -269,6 +269,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: transform 0.3s ease;
+  background-color: #e2c99f;
 
   &:hover {
       transform: scale(1.02);
@@ -281,7 +282,7 @@ body {
       object-fit: cover;
   }
 
-  .card-body {
+  .tarjeta_cuerpo {
       padding: 1rem;
       display: flex;
       flex-direction: column;

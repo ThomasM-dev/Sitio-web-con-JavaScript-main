@@ -10,15 +10,15 @@ async function Mostrarproductos() {
     `;
 
     data.forEach(producto => {
-        let imagen = producto.image;
         productosHTML += `
         <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
+            <div class="tarjetas">
                 <img src="${producto.image}" class="card-img-top" alt="${producto.title}">
-                <div class="card-body">
+                <div class="tarjeta_cuerpo">
                     <h5 class="tarjeta_titulo">${producto.title}</h5>
                     <p class="tarjeta_texto">${producto.description.slice(0, 100)}...</p>
                     <p class="precio">$${producto.price}</p>
+                    
                 </div>
             </div>
         </div>

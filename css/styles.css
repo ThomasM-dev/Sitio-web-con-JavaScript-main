@@ -221,7 +221,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-.card {
+.tarjetas {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -229,33 +229,34 @@ body {
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: transform 0.3s ease;
+  background-color: #e2c99f;
 }
-.card:hover {
+.tarjetas:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.card img {
+.tarjetas img {
   height: 300px;
   width: 100%;
   object-fit: cover;
 }
-.card .card-body {
+.tarjetas .tarjeta_cuerpo {
   padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.card .card-body .tarjeta_titulo {
+.tarjetas .tarjeta_cuerpo .tarjeta_titulo {
   font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.card .card-body .tarjeta_texto {
+.tarjetas .tarjeta_cuerpo .tarjeta_texto {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #6c757d;
 }
-.card .card-body .precio {
+.tarjetas .tarjeta_cuerpo .precio {
   font-size: 1.4rem;
   color: #28a745;
   font-weight: bold;
