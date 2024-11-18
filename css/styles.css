@@ -7,6 +7,23 @@ body {
   background: linear-gradient(to right, #000000, #7890a8, #304878, #181848);
 }
 
+.pantalla_carga {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../imagenes/gif_loader.svg") 50% 50% no-repeat rgb(0, 0, 0);
+  opacity: 0.9;
+  transition: opacity 0.5s ease-out;
+}
+
+.pantalla_carga.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .menu_navegacion {
   background-color: #353437;
 }
