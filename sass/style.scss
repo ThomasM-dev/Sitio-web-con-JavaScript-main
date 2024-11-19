@@ -2,9 +2,7 @@ html {
   font-size: 62.5%; 
 
 }
-body {
-  background: linear-gradient(to right, #000000, #7890a8, #304878, #181848);
-}
+
 
 .pantalla_carga {
   position: fixed;
@@ -26,7 +24,13 @@ body {
 .menu_navegacion {
   background-color: #353437;
 
+.icono-hamburguesa {
+  color: white;
+  border: 1px solid brown;
+  font-size: 2rem;
+}
 .logo-sitio {
+  display: flex;
   max-width: 70px;  
   height: auto;  
   margin: 5px; 
@@ -34,7 +38,9 @@ body {
   &:hover {
     transform: scale(1.1); 
   }
-}
+  @media (max-width: 48rem) { 
+    display: none;
+  }}
 }
 
 .nav_left {
@@ -54,7 +60,6 @@ body {
   @media (max-width: 76.8rem) { 
     flex-direction: column; 
     align-items: center; 
-
     a {
       font-size: 1.6rem; 
       margin: 0.3rem; 
