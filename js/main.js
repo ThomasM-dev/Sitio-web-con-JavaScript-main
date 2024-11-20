@@ -1,5 +1,5 @@
 const productosContenedor = document.getElementById("productos");
-import { renderizarProductos, obtenerProductos } from "./tarjetas.js";
+import { renderizarProductos, obtenerProductos,} from "./tarjetas.js";
 
 
 async function init() {

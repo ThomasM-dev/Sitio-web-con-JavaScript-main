@@ -29,16 +29,28 @@ export async function renderizarProductos(data, productosContenedor) {
                     <div>
                     <label for="cantidad-${producto.id}">Cantidad de productos:</label>
                     <input type="number" id="cantidad-${producto.id}" name="cantidad" value="1" min="1" max="100" step="1">
-                    <button data-id="${producto.id}">Agregar al carrito</button>
+                    <button id="agregar-${producto.id}" data-id="${producto.id}">Agregar al carrito</button>
                     </div>
                 </div>
             </div>
         </div>
+        
         `;
+        productosContenedor.innerHTML = productosHTML;
+
+        function ButtonEvento () {
+            let inputCantidad = document.getElementById ( `cantidad-${producto.id}`)
+            let buttonAgregar = document.getElementById (`agregar-${producto.id}`)
+            console.log(inputCantidad);   
+            console.log(buttonAgregar);
+            
+        }
+
+        ButtonEvento ();
     });
     productosHTML += `
         </div>
     </div>
     `;
-    productosContenedor.innerHTML = productosHTML;
+
 };
