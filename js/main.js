@@ -1,5 +1,5 @@
 const productosContenedor = document.getElementById("productos");
-import { renderizarProductos, obtenerProductos,} from "./tarjetas.js";
+import { renderizarProductos, obtenerProductos, } from "./tarjetas.js";
 
 
 async function init() {
@@ -8,6 +8,7 @@ async function init() {
         const productosData = await obtenerProductos ()
         // renderizar los productos al dom
         renderizarProductos(productosData, productosContenedor);       
+
     } catch (error) {
         console.error("Error al inicializar la aplicación:", error);
         productosContenedor.innerHTML = `<p class="error">No se pudieron cargar los productos. Intenta más tarde.</p>`;

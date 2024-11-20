@@ -11,7 +11,7 @@ export async function obtenerProductos() {
 }
 
 
-export async function renderizarProductos(data, productosContenedor) {
+export async function renderizarProductos(data, productosContenedor, asignarEventos) {
     let productosHTML = `
     <div class="container">
         <div class="row">
@@ -36,21 +36,15 @@ export async function renderizarProductos(data, productosContenedor) {
         </div>
         
         `;
+
         productosContenedor.innerHTML = productosHTML;
-
-        function ButtonEvento () {
-            let inputCantidad = document.getElementById ( `cantidad-${producto.id}`)
-            let buttonAgregar = document.getElementById (`agregar-${producto.id}`)
-            console.log(inputCantidad);   
-            console.log(buttonAgregar);
-            
-        }
-
-        ButtonEvento ();
     });
+
     productosHTML += `
         </div>
     </div>
     `;
 
 };
+
+
