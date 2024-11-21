@@ -1,13 +1,14 @@
 const productosContenedor = document.getElementById("productos");
-import { renderizarProductos, obtenerProductos, } from "./tarjetas.js";
+const buttonCarrito = document.getElementById ("buttonCarrito")
+import { obtenerProductos, renderizarProductos } from "./tarjetas.js";
 
 
-async function init() {
+async function init () {
     try {
-        // obtener productos api
-        const productosData = await obtenerProductos ()
-        // renderizar los productos al dom
-        renderizarProductos(productosData, productosContenedor);       
+    // Obtener productos desde la  API
+    const productos = await obtenerProductos ()  // Esperar la respuesta de la API
+    // mostrar productos
+    renderizarProductos (productos, productosContenedor)
 
     } catch (error) {
         console.error("Error al inicializar la aplicación:", error);
