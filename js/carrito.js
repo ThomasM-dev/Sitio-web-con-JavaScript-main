@@ -1,1 +1,2 @@
+import { renderizarButton } from "./tarjetas";
 

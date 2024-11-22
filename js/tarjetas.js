@@ -27,7 +27,7 @@ function estructuraTarjeta(producto) {
             <div class="tarjeta_cuerpo">
                 <h5 class="tarjeta_titulo">${producto.title}</h5>
                 <p class="tarjeta_texto">${producto.description.slice(0, 100)}...</p>
-                <p class="precio">$${producto.price}</p>
+                <p id = "precio-${producto.price}" class="precio">$${producto.price}</p>
                 <div>
                     <label for="cantidad-${producto.id}">Cantidad de productos:</label>
                     <input type="number" id="cantidad-${producto.id}" name="cantidad" value="1" min="1" max="100" step="1">
@@ -39,9 +39,23 @@ function estructuraTarjeta(producto) {
     `;
 }
 
-export function renderizarButton (data) {
-    data.forEach (producto => {
-        let inputCantidad = document.getElementById(`cantidad-${producto.id}`);
-        let buttonAgregar = document.getElementById(`agregar-${producto.id}`);
+export function renderizarButton(data) {
+    data.forEach(producto => {
+        const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
+        const buttonAgregar = document.getElementById(`agregar-${producto.id}`);
+        const precioProducto = document.getElementById(`precio-${producto.price}`);
+                
+        buttonAgregar.addEventListener("click", () => {
+            // convertir los valores a números
+            const cantidad = parseInt(inputCantidad.value, 10) || 0;
+            const precio = parseFloat(precioProducto) || 0;
+            console.log(precio);
+            
+
+            // calcular el total
+            const total = cantidad * precio;
+
+            console.log(total);
+        });
     });
 }
