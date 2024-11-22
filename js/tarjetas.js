@@ -27,7 +27,7 @@ function estructuraTarjeta(producto) {
             <div class="tarjeta_cuerpo">
                 <h5 class="tarjeta_titulo">${producto.title}</h5>
                 <p class="tarjeta_texto">${producto.description.slice(0, 100)}...</p>
-                <p id = "precio-${producto.price}" class="precio">$${producto.price}</p>
+                <p id ="precio-${producto.price}" class="precio">$${producto.price}</p>
                 <div>
                     <label for="cantidad-${producto.id}">Cantidad de productos:</label>
                     <input type="number" id="cantidad-${producto.id}" name="cantidad" value="1" min="1" max="100" step="1">
@@ -44,18 +44,15 @@ export function renderizarButton(data) {
         const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
         const buttonAgregar = document.getElementById(`agregar-${producto.id}`);
         const precioProducto = document.getElementById(`precio-${producto.price}`);
+        
+            buttonAgregar.addEventListener("click", () => {
+                // metodo replace borra el valor $, y pone uno nuevo 
+                const precio =  parseFloat(precioProducto.textContent.replace('$', ''));
+                const cantidad = (inputCantidad.value);
+                const total = precio * cantidad;
+                console.log(`Producto ${producto.title} agregado correctamente por el precio de ${precio} camtidad ${cantidad} con un total de ${total}`);
                 
-        buttonAgregar.addEventListener("click", () => {
-            // convertir los valores a números
-            const cantidad = parseInt(inputCantidad.value, 10) || 0;
-            const precio = parseFloat(precioProducto) || 0;
-            console.log(precio);
-            
 
-            // calcular el total
-            const total = cantidad * precio;
-
-            console.log(total);
         });
     });
 }
