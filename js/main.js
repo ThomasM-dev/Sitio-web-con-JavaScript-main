@@ -1,5 +1,6 @@
 const productosContenedor = document.getElementById("productos");
 const buttonCarrito = document.getElementById ("buttonCarrito")
+
 import { obtenerProductos, renderizarProductos, renderizarButton } from "./tarjetas.js";
 
 
