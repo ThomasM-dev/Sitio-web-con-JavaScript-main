@@ -1,7 +1,6 @@
 const productosContenedor = document.getElementById("productos");
 const buttonCarrito = document.getElementById ("buttonCarrito")
-
-import { obtenerProductos, renderizarProductos, renderizarButton } from "./tarjetas.js";
+import { obtenerProductos, renderizarProductos, renderizarButton, mostrarCarrito } from "./tarjetas.js";
 
 
 async function init () {
@@ -10,12 +9,12 @@ async function init () {
     const productos = await obtenerProductos ()  // Esperar la respuesta de la API
     // mostrar productos
     renderizarProductos (productos, productosContenedor);
-
     renderizarButton (productos);
 
+    mostrarCarrito (buttonCarrito)
     } catch (error) {
         console.error("Error al inicializar la aplicación:", error);
-        productosContenedor.innerHTML = `<p class="error">No se pudieron cargar los productos. Intenta más tarde.</p>`;
+        productosContenedor.innerHTML = `<p class="error_inicializacion">No se pudieron cargar los productos. Intenta más tarde.</p>`;
     }
 }
 

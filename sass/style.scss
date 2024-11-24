@@ -3,7 +3,6 @@ html {
 
 }
 
-
 .pantalla_carga {
   position: fixed;
   left: 0;
@@ -22,7 +21,7 @@ html {
 }
 
 .menu_navegacion {
-  background-color: #353437;
+  background-color: black;
 
 .icono-hamburguesa {
   color: white;
@@ -293,7 +292,7 @@ html {
   border: 1px solid #ddd;
   border-radius: 8px;
   transition: transform 0.3s ease;
-  background-color: #e2c99f;
+  background-color: black;
 
   &:hover {
       transform: scale(1.02);
@@ -316,23 +315,24 @@ html {
           font-size: 1.6rem;
           font-weight: bold;
           margin-bottom: 1rem;
+          color: white;
       }
 
       .tarjeta_texto {
           font-size: 1.2rem;
           margin-bottom: 1rem;
-          color: #6c757d;
+          color: #e6e1e1 ;
       }
 
       .precio {
-          font-size: 1.4rem;
+          font-size: 1.7rem;
           color: #28a745;
           font-weight: bold;
       }
   }
   label {
     font-size: 1.4rem;
-    color: #333;
+    color: #d4d4d4;
     margin-right: 0.5rem;
 }
 
@@ -350,24 +350,25 @@ input {
         border-color: brown;
     }
 }
+button{
+  padding: 10px 10px;
+  background-color: #050801;
+  color: #03e9f4;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
 
-button {
-    padding: 0.6rem 1rem;
-    font-size: 1.4rem;
-    color: #fff;
-    background-color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-        background-color: brown;
-    }
-
-    &:active {
-        transform: scale(0.98);
-    }
+button:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 2px #03e9f4,
+                0 0 5px #03e9f4,
+                0 0 10px #03e9f4,
+                0 0 20px #03e9f4;
 }
 }
 
@@ -381,12 +382,47 @@ button {
     .precio {
         font-size: 1.6rem;
     }
+  
+}
+
+// error inicializacion
+.error_inicializacion {
+  color: #e74c3c; 
+  background-color: #fdecea; 
+  border: 2px solid #f1948a; 
+  padding: 1.5rem;
+  text-align: center;
+  margin: 2rem auto;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  max-width: 600px;
+
+  // animación al aparecer
+  animation: fadeIn 0.4s ease-in-out;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+}
+
+// Animación para una transición suave
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 
 // Estilos del footer
 .footer {
-  background-color: #353437;
+  background-color: black;
   margin-top: 1rem;
   padding: 20px;
   text-align: center;

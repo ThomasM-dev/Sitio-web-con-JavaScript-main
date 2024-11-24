@@ -31,7 +31,7 @@ function estructuraTarjeta(producto) {
                 <div>
                     <label for="cantidad-${producto.id}">Cantidad de productos:</label>
                     <input type="number" id="cantidad-${producto.id}" name="cantidad" value="1" min="1" max="100" step="1">
-                    <button id="agregar-${producto.id}" data-id="${producto.id}">Agregar al carrito</button>
+                    <button class= "btn-agregar"  id="agregar-${producto.id}" data-id="${producto.id}">Agregar al carrito</button>
                 </div>
             </div>
         </div>
@@ -40,6 +40,7 @@ function estructuraTarjeta(producto) {
 }
 
 export function renderizarButton(data) {
+    const carritoCompras = [];
     data.forEach(producto => {
         const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
         const buttonAgregar = document.getElementById(`agregar-${producto.id}`);
@@ -50,9 +51,17 @@ export function renderizarButton(data) {
                 const precio =  parseFloat(precioProducto.textContent.replace('$', ''));
                 const cantidad = (inputCantidad.value);
                 const total = precio * cantidad;
-                console.log(`Producto ${producto.title} agregado correctamente por el precio de ${precio} camtidad ${cantidad} con un total de ${total}`);
-                
-
+                buttonAgregar.textContent = "Agregado"
+                carritoCompras.push (`${producto.title} cantidad: ${cantidad} precioUnitario: ${precio}, total: ${total}`)
+                setTimeout (() => {
+                buttonAgregar.textContent = "Agregar al carrito"
+                }, 1000)
         });
     });
+}
+
+export function mostrarCarrito(buttonCarrito, data) {
+    buttonCarrito.addEventListener("click", () => {
+
+    })
 }
