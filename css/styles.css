@@ -22,6 +22,7 @@ html {
 
 .menu_navegacion {
   background-color: black;
+  padding: 10px;
 }
 .menu_navegacion .icono-hamburguesa {
   color: white;
@@ -41,6 +42,9 @@ html {
 @media (max-width: 48rem) {
   .menu_navegacion .logo-sitio {
     display: none;
+  }
+  .menu_navegacion .menu_navegacion {
+    padding: 10px;
   }
 }
 
@@ -362,6 +366,17 @@ html {
     transform: scale(1);
   }
 }
+.swal2-correo {
+  background-color: #3085d6;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 16px;
+  text-align: center;
+}
+
 .footer {
   background-color: black;
   margin-top: 1rem;

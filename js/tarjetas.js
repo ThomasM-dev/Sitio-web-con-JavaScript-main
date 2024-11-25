@@ -49,10 +49,27 @@ export function renderizarButton(data) {
             buttonAgregar.addEventListener("click", () => {
                 // metodo replace borra el valor $, y pone uno nuevo 
                 const precio =  parseFloat(precioProducto.textContent.replace('$', ''));
-                const cantidad = (inputCantidad.value);
+                const cantidad = parseInt(inputCantidad.value);
                 const total = precio * cantidad;
                 buttonAgregar.textContent = "Agregado"
-                carritoCompras.push (`${producto.title} cantidad: ${cantidad} precioUnitario: ${precio}, total: ${total}`)
+                // verifica que la cantidad sea mayor a 1
+                if (inputCantidad.value < 1) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Ingrese una cantidad mayor a 1",
+                    });
+                // alert para pedidos mayorista
+                } else if (inputCantidad.value > 100) {
+                    Swal.fire({
+                        title: "¿Necesitas pedidos mayorista?",
+                        html : `<a href="../pages/cuenta.html" class= "swal2-correo">Registrarse</a>`,
+                        showConfirmButton: false,
+                    });
+                } else {
+                    carritoCompras.push(`${producto.title} cantidad: ${cantidad} precioUnitario: ${precio}, total: ${total}`);
+                }
+                
                 setTimeout (() => {
                 buttonAgregar.textContent = "Agregar al carrito"
                 }, 1000)
