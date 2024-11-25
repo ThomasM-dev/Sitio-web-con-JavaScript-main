@@ -1,5 +1,6 @@
 const productosContenedor = document.getElementById("productos");
-const buttonCarrito = document.getElementById ("buttonCarrito")
+const buttonCarrito = document.getElementById ("buttonCarrito");
+const contadorProductos= document.getElementById ("contadorProductos");
 import { obtenerProductos, renderizarProductos, renderizarButton, mostrarCarrito } from "./tarjetas.js";
 
 
@@ -12,7 +13,7 @@ async function init () {
     if (productosContenedor != null) {
     // mostrar productos
     renderizarProductos (productos, productosContenedor);
-    renderizarButton (productos);
+    renderizarButton (productos, contadorProductos);
     }
     
     mostrarCarrito (buttonCarrito)

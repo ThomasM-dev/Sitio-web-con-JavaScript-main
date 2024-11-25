@@ -289,6 +289,23 @@ html {
   }
 }
 
+.carrito-contenedor {
+  position: relative; // Permite posicionar el número relativo al contenedor
+  display: inline-block;
+
+
+  .contador {
+    position: absolute;
+    top: -8px; // Mueve el número hacia arriba
+    right: -15; // Ajusta el número ligeramente hacia la derecha
+    font-size: 1.4rem; // Tamaño del texto
+    font-weight: bold; // Negrita para destacar el número
+    color: white; // Color del texto (puedes cambiarlo según prefieras)
+  }
+}
+
+
+
 // Estilos pagina productos
 
 .tarjetas {
@@ -426,8 +443,8 @@ button:hover{
   }
 }
 
-// modal-swal2-correo
-.swal2-correo {
+// modal-swal2-formulario
+.swal2-formulario {
   background-color: #3085d6;
   color: white;
   padding: 10px 20px;
@@ -437,9 +454,6 @@ button:hover{
   font-size: 16px;
   text-align: center;
 }
-
-
-
 
 
 

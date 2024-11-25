@@ -47,8 +47,13 @@
             <div class="navbar-nav">
                 <a class="nav-link" href="index.html">Home</a>
                 <a class="nav-link" href="pages/productos.html">Productos</a>
-                <a class="nav-link" href="#">Cuenta</a>
-                <a id="buttonCarrito" class="nav-link" href="#"><i class="bi bi-cart3"></i><span class="visually-hidden">Carrito</span></a>
+                <a class="nav-link" href="pages/cuenta.html">Cuenta</a>
+                <a id="buttonCarrito" class="nav-link" href="#">
+                    <div class="carrito-contenedor">
+                      <i class="bi bi-cart3"></i>
+                      <span id="contadorProductos" class="contador">0</span>
+                    </div>
+                  </a>
             </div>
         </div>
     </div>
@@ -160,7 +165,7 @@
     </div>
 </section>
 
-<section class="contacto py-5 bg-dark">
+<section id="formulario" class="contacto py-5 bg-dark">
     <div class="container">
         <h2 class="text-center mb-4">Contáctanos</h2>
         <p class="text-center mb-5">

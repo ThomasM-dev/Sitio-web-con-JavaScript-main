@@ -39,8 +39,8 @@ function estructuraTarjeta(producto) {
     `;
 }
 
-export function renderizarButton(data) {
-    const carritoCompras = [];
+export function renderizarButton(data, contadorProductos) {
+    const carritoCompras = [];    
     data.forEach(producto => {
         const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
         const buttonAgregar = document.getElementById(`agregar-${producto.id}`);
@@ -63,11 +63,12 @@ export function renderizarButton(data) {
                 } else if (inputCantidad.value > 100) {
                     Swal.fire({
                         title: "¿Necesitas pedidos mayorista?",
-                        html : `<a href="../pages/cuenta.html" class= "swal2-correo">Registrarse</a>`,
+                        html : `<button class= "swal2-formulario" onclick="location.href='../index.html#formulario'">Completa el formulario</button>`,
                         showConfirmButton: false,
                     });
                 } else {
                     carritoCompras.push(`${producto.title} cantidad: ${cantidad} precioUnitario: ${precio}, total: ${total}`);
+                    contadorProductos.textContent = carritoCompras.length;                    
                 }
                 
                 setTimeout (() => {
