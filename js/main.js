@@ -1,8 +1,10 @@
 const productosContenedor = document.getElementById("productos");
 const buttonCarrito = document.getElementById ("buttonCarrito");
 const contadorProductos= document.getElementById ("contadorProductos");
-import { obtenerProductos, renderizarProductos, renderizarButton, mostrarCarrito } from "./tarjetas.js";
-
+const modal = document.getElementById("modal");
+const closeBtn = document.querySelector(".close-btn");
+import { obtenerProductos, renderizarProductos, renderizarButton } from "./tarjetas.js";
+import { cerrarCarrito, mostrarCarrito } from "./carrito.js";
 
 async function init () {
     try {
@@ -16,14 +18,14 @@ async function init () {
     renderizarButton (productos, contadorProductos);
     }
     
-    mostrarCarrito (buttonCarrito)
+    mostrarCarrito (buttonCarrito, modal);
+    cerrarCarrito (closeBtn)
 
     } catch (error) {
         console.error("Error al inicializar la aplicación:", error);
         productosContenedor.innerHTML = `<p class="error_inicializacion">No se pudieron cargar los productos. Intenta más tarde.</p>`;
     }
 }
-
 window.addEventListener ("load", () => {
     init ();
     setTimeout (() => {

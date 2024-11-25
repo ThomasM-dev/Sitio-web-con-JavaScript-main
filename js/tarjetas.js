@@ -78,8 +78,3 @@ export function renderizarButton(data, contadorProductos) {
     });
 }
 
-export function mostrarCarrito(buttonCarrito, data) {
-    buttonCarrito.addEventListener("click", () => {
-
-    })
-}
