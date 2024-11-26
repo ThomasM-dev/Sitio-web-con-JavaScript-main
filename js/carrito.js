@@ -7,5 +7,5 @@ export function mostrarCarrito(buttonCarrito, modal) {
 export function cerrarCarrito (closeBtn) {
     closeBtn.addEventListener("click", () => {
         modal.style.display = "none";
-    });
+        });
 }

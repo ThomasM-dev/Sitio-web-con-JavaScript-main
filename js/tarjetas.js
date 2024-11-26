@@ -10,7 +10,7 @@ export async function obtenerProductos() {
     }
 }
 
-export function renderizarProductos (data, productosContenedor) {
+export function renderizarProductos (data, productosContenedor) {    
     let productosHtml = ""
     data.forEach(producto => {
     productosHtml += estructuraTarjeta (producto);
@@ -68,7 +68,7 @@ export function renderizarButton(data, contadorProductos) {
                     });
                 } else {
                     carritoCompras.push(`${producto.title} cantidad: ${cantidad} precioUnitario: ${precio}, total: ${total}`);
-                    contadorProductos.textContent = carritoCompras.length;                    
+                    contadorProductos.textContent = carritoCompras.length;
                 }
                 
                 setTimeout (() => {

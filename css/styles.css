@@ -5,26 +5,39 @@ html {
 
 .modal {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .modal .modal-content {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 0.5rem;
-  text-align: center;
+  width: 40%;
+  height: auto;
 }
-.modal .close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+.modal .btn-carrito {
+  display: flex;
+  justify-content: space-around;
+}
+.modal .btn-carrito button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
+}
+.modal .btn-carrito button:first-of-type {
+  background-color: greenyellow;
+  color: #333;
+}
+.modal .btn-carrito button:first-of-type:hover {
+  background-color: green;
+}
+.modal .btn-carrito button:last-of-type {
+  background-color: #007bff;
+  color: #fff;
+}
+.modal .btn-carrito button:last-of-type:hover {
+  background-color: #0056b3;
 }
 
 .pantalla_carga {

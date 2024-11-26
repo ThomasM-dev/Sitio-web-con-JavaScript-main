@@ -2,7 +2,7 @@ const productosContenedor = document.getElementById("productos");
 const buttonCarrito = document.getElementById ("buttonCarrito");
 const contadorProductos= document.getElementById ("contadorProductos");
 const modal = document.getElementById("modal");
-const closeBtn = document.querySelector(".close-btn");
+const closeBtn = document.getElementById("cerrarCarrito");
 import { obtenerProductos, renderizarProductos, renderizarButton } from "./tarjetas.js";
 import { cerrarCarrito, mostrarCarrito } from "./carrito.js";
 

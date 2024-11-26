@@ -5,27 +5,43 @@ html {
 // modal carrito
 .modal {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
 
-  .modal-content {
-    background-color: white;
-    padding: 2rem; // 20px
-    border-radius: 0.5rem; // 5px
-    text-align: center;
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 1rem; // 10px
-    right: 1rem; // 10px
+.modal-content {
+  width: 40%;
+  height: auto;
+}
+.btn-carrito {
+  display: flex;
+  justify-content: space-around;
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+
+    &:first-of-type {
+      background-color: greenyellow;
+      color: #333;
+
+      &:hover {
+        background-color: green;
+      }
+    }
+
+    &:last-of-type {
+      background-color: #007bff;
+      color: #fff;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+    }
   }
 }
 
