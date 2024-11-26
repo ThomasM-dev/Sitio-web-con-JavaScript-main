@@ -3,41 +3,59 @@ html {
   font-size: 62.5%;
 }
 
-.modal {
+.ventanaModal {
   display: none;
+  position: fixed;
   z-index: 1;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal .modal-content {
-  width: 40%;
-  height: auto;
-}
-.modal .btn-carrito {
+.ventanaModal .contenido-modal {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  background-color: white;
+  width: 50%;
+  height: auto;
+  padding: 20px;
+  border-radius: 8px;
 }
-.modal .btn-carrito button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1.2rem;
+.ventanaModal .contenido-modal .carritoVacio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.ventanaModal .contenido-modal .btn-carrito {
+  display: flex;
+  justify-content: space-between;
+}
+.ventanaModal .contenido-modal button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.modal .btn-carrito button:first-of-type {
-  background-color: greenyellow;
-  color: #333;
-}
-.modal .btn-carrito button:first-of-type:hover {
-  background-color: green;
-}
-.modal .btn-carrito button:last-of-type {
+.ventanaModal .contenido-modal button:hover {
   background-color: #007bff;
-  color: #fff;
+  color: white;
+  transform: scale(1.05);
 }
-.modal .btn-carrito button:last-of-type:hover {
-  background-color: #0056b3;
+.ventanaModal .contenido-modal button:focus {
+  outline: none;
+}
+.ventanaModal .contenido-modal button:first-of-type {
+  background-color: #28a745;
+  color: white;
+}
+.ventanaModal .contenido-modal button:last-of-type {
+  background-color: #dc3545;
+  color: white;
 }
 
 .pantalla_carga {

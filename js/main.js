@@ -1,8 +1,12 @@
 const productosContenedor = document.getElementById("productos");
 const buttonCarrito = document.getElementById ("buttonCarrito");
 const contadorProductos= document.getElementById ("contadorProductos");
-const modal = document.getElementById("modal");
-const closeBtn = document.getElementById("cerrarCarrito");
+const ventanaModal = document.getElementById("ventanaModal");
+const buttonCerrar = document.getElementById("cerrarCarrito");
+const productosCarrito = document.getElementById ("productosCarritos")
+console.log(productosCarrito);
+
+const carritoCompras = []; 
 import { obtenerProductos, renderizarProductos, renderizarButton } from "./tarjetas.js";
 import { cerrarCarrito, mostrarCarrito } from "./carrito.js";
 
@@ -15,11 +19,11 @@ async function init () {
     if (productosContenedor != null) {
     // mostrar productos
     renderizarProductos (productos, productosContenedor);
-    renderizarButton (productos, contadorProductos);
+    renderizarButton (productos, contadorProductos, carritoCompras);
     }
     
-    mostrarCarrito (buttonCarrito, modal);
-    cerrarCarrito (closeBtn)
+    mostrarCarrito (buttonCarrito, ventanaModal, productosCarrito, carritoCompras);
+    cerrarCarrito (buttonCerrar)
 
     } catch (error) {
         console.error("Error al inicializar la aplicación:", error);

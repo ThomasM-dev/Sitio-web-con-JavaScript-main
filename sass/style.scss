@@ -3,47 +3,69 @@ html {
 
 }
 // modal carrito
-.modal {
+.ventanaModal {
   display: none;
+  position: fixed;
   z-index: 1;
+  width: 100%;
+  height: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: center;    
   background-color: rgba(0, 0, 0, 0.5);
 
-.modal-content {
-  width: 40%;
-  height: auto;
-}
+  .contenido-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    border-radius: 8px;
+
+  .carritoVacio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
 .btn-carrito {
   display: flex;
-  justify-content: space-around;
-  button {
-    padding: 0.8rem 1.5rem;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:first-of-type {
-      background-color: greenyellow;
-      color: #333;
-
-      &:hover {
-        background-color: green;
-      }
-    }
-
-    &:last-of-type {
-      background-color: #007bff;
-      color: #fff;
+  justify-content: space-between;
+}
+    button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: #007bff;
+        color: white;
+        transform: scale(1.05);
       }
-    }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:first-of-type {
+        background-color: #28a745;
+        color: white;
+      }
+
+      &:last-of-type {
+        background-color: #dc3545;
+        color: white;
+      }
     }
   }
 }
+
+
 
 .pantalla_carga {
   position: fixed;

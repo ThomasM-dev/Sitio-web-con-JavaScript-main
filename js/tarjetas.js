@@ -39,9 +39,8 @@ function estructuraTarjeta(producto) {
     `;
 }
 
-export function renderizarButton(data, contadorProductos) {
-    const carritoCompras = [];    
-    data.forEach(producto => {
+export function renderizarButton(data, contadorProductos, carritoCompras) {
+    data.forEach(producto => {        
         const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
         const buttonAgregar = document.getElementById(`agregar-${producto.id}`);
         const precioProducto = document.getElementById(`precio-${producto.price}`);
@@ -51,13 +50,12 @@ export function renderizarButton(data, contadorProductos) {
                 const precio =  parseFloat(precioProducto.textContent.replace('$', ''));
                 const cantidad = parseInt(inputCantidad.value);
                 const total = precio * cantidad;
-                buttonAgregar.textContent = "Agregado"
                 // verifica que la cantidad sea mayor a 1
                 if (inputCantidad.value < 1) {
                     Swal.fire({
                         icon: "error",
                         title: "Oops...",
-                        text: "Ingrese una cantidad mayor a 1",
+                        text: "Ingrese una cantidad mayor o igual a 1",
                     });
                 // alert para pedidos mayorista
                 } else if (inputCantidad.value > 100) {
@@ -67,10 +65,17 @@ export function renderizarButton(data, contadorProductos) {
                         showConfirmButton: false,
                     });
                 } else {
-                    carritoCompras.push(`${producto.title} cantidad: ${cantidad} precioUnitario: ${precio}, total: ${total}`);
+                    buttonAgregar.textContent = "Agregado"
+                    carritoCompras.push({
+                        titulo: producto.title,
+                        cantidad: cantidad,
+                        precioUnitario: precio,
+                        img: producto.image,
+                        total: total
+                    });                    
                     contadorProductos.textContent = carritoCompras.length;
+                    console.log(carritoCompras);
                 }
-                
                 setTimeout (() => {
                 buttonAgregar.textContent = "Agregar al carrito"
                 }, 1000)
