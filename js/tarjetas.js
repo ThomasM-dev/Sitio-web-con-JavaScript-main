@@ -1,12 +1,12 @@
 let url = "https://fakestoreapi.com/products"
 
-export async function obtenerProductos() {
+export async function obtenerProductos(productosContenedor) {
     try {
     const response = await fetch (url);
     const data = await response.json ();
     return data
     } catch (error) {
-        console.log ("Error al obtener los datos de la API", error);
+     productosContenedor.innerHTML =   `<p class="error_inicializacion">Error al obtener los datos de la API</p>`;
     }
 }
 
@@ -40,46 +40,55 @@ function estructuraTarjeta(producto) {
 }
 
 export function renderizarButton(data, contadorProductos, carritoCompras) {
-    data.forEach(producto => {        
+    data.forEach((producto) => {
         const inputCantidad = document.getElementById(`cantidad-${producto.id}`);
         const buttonAgregar = document.getElementById(`agregar-${producto.id}`);
         const precioProducto = document.getElementById(`precio-${producto.price}`);
-        
-            buttonAgregar.addEventListener("click", () => {
-                // metodo replace borra el valor $, y pone uno nuevo 
-                const precio =  parseFloat(precioProducto.textContent.replace('$', ''));
-                const cantidad = parseInt(inputCantidad.value);
-                const total = precio * cantidad;
-                // verifica que la cantidad sea mayor a 1
-                if (inputCantidad.value < 1) {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "Ingrese una cantidad mayor o igual a 1",
-                    });
-                // alert para pedidos mayorista
-                } else if (inputCantidad.value > 100) {
-                    Swal.fire({
-                        title: "¿Necesitas pedidos mayorista?",
-                        html : `<button class= "swal2-formulario" onclick="location.href='../index.html#formulario'">Completa el formulario</button>`,
-                        showConfirmButton: false,
-                    });
-                } else {
-                    buttonAgregar.textContent = "Agregado"
-                    carritoCompras.push({
-                        titulo: producto.title,
-                        cantidad: cantidad,
-                        precioUnitario: precio,
-                        img: producto.image,
-                        total: total
-                    });                    
-                    contadorProductos.textContent = carritoCompras.length;
-                    console.log(carritoCompras);
-                }
-                setTimeout (() => {
-                buttonAgregar.textContent = "Agregar al carrito"
-                }, 1000)
+
+        buttonAgregar.addEventListener("click", () => {
+            const precio = parseFloat(precioProducto.textContent.replace('$', ''));
+            const cantidad = parseInt(inputCantidad.value);
+            const subtotal = precio * cantidad;
+
+            if (validarCantidad(cantidad)) {
+                buttonAgregar.textContent = "Agregado";
+                buttonAgregar.disabled = true;
+
+                carritoCompras.push({
+                    titulo: producto.title,
+                    cantidad: cantidad,
+                    precioUnitario: precio,
+                    img: producto.image,
+                    subtotal: subtotal,
+                });
+
+                contadorProductos.textContent = carritoCompras.length;
+                console.log(carritoCompras);
+
+                setTimeout(() => {
+                    buttonAgregar.textContent = "Agregar al carrito";
+                    buttonAgregar.disabled = false;
+                }, 1000);
+            }
         });
     });
 }
 
+function validarCantidad(cantidad) {
+    if (cantidad < 1) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Ingrese una cantidad mayor o igual a 1",
+        });
+        return false;
+    } else if (cantidad > 100) {
+        Swal.fire({
+            title: "¿Necesitas pedidos mayorista?",
+            html: `<button class="swal2-formulario" onclick="location.href='../index.html#formulario'">Completa el formulario</button>`,
+            showConfirmButton: false,
+        });
+        return false;
+    }
+    return true;
+}

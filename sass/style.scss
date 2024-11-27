@@ -21,6 +21,8 @@ html {
     height: auto;
     padding: 20px;
     border-radius: 8px;
+    overflow-y: auto;
+    max-height: 400px;
 
   .carritoVacio {
     display: flex;
@@ -65,6 +67,45 @@ html {
   }
 }
 
+// tabla productos modal
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse; 
+
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+
+  td {
+    background-color: #fff;
+  }
+
+  .tabla-header {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+  // Estilos para las imágenes
+  td img {
+    max-width: 50px;
+    max-height: 50px;
+    object-fit: cover; 
+  }
+}
+
+#mensajeCarrito {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #ff0000;
+  font-weight: bold;
+}
 
 
 .pantalla_carga {

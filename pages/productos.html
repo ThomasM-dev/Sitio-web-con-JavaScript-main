@@ -55,10 +55,29 @@
 </nav>
 </header>
 <main>
+    <div class="container-fluid"> 
         <div class="ventanaModal" id="ventanaModal">
             <div class="contenido-modal" id="contenido-modal">
-                <div class="productosCarritos" id="productosCarritos">
+                <div>
+                    <h2 id="mensajeCarrito"></h2>
+                    <table class="tabla-carrito">
+                        <thead class="tabla-header">
+                            <tr>
+                                <th>Indice</th>
+                                <th>#</th>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>PrecioUnitario</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaProductos">
+                            <tr>
 
+                            </tr>
+                        </tbody>
+                    </table>
+                    
                 </div>
                 <div class="btn-carrito">
                     <button id="cerrarCarrito">SEGUIR COMPRANDO</button>
@@ -66,6 +85,7 @@
                 </div>
             </div>
         </div>
+    </div>
     <div class="container">
         <div id="productos" class="row">
             <!-- listado productos -->

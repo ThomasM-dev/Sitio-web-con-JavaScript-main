@@ -21,6 +21,8 @@ html {
   height: auto;
   padding: 20px;
   border-radius: 8px;
+  overflow-y: auto;
+  max-height: 400px;
 }
 .ventanaModal .contenido-modal .carritoVacio {
   display: flex;
@@ -56,6 +58,39 @@ html {
 .ventanaModal .contenido-modal button:last-of-type {
   background-color: #dc3545;
   color: white;
+}
+
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+}
+.tabla-carrito th, .tabla-carrito td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.tabla-carrito th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+.tabla-carrito td {
+  background-color: #fff;
+}
+.tabla-carrito .tabla-header {
+  background-color: #f0f0f0;
+  color: #333;
+}
+.tabla-carrito td img {
+  max-width: 50px;
+  max-height: 50px;
+  object-fit: cover;
+}
+
+#mensajeCarrito {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #ff0000;
+  font-weight: bold;
 }
 
 .pantalla_carga {
@@ -492,4 +527,4 @@ html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=Styles.css.map */
