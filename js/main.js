@@ -11,16 +11,14 @@ import { cerrarCarrito, mostrarCarrito } from "./carrito.js";
 
 async function init () {
     try {
-    // Obtener productos desde la  API
-    const productos = await obtenerProductos ()  // Esperar la respuesta de la API
-
     // verifica que la varibale exista en el DOM
     if (productosContenedor != null) {
+     // Obtener productos desde la  API
+    const productos = await obtenerProductos ()  // Esperar la respuesta de la API
     // mostrar productos
     renderizarProductos (productos, productosContenedor);
     renderizarButton (productos, contadorProductos, carritoCompras);
     }
-    
     mostrarCarrito (buttonCarrito, ventanaModal, mensajeCarrito, carritoCompras, tablaProductos);
     cerrarCarrito (buttonCerrar, ventanaModal)
 
@@ -38,3 +36,11 @@ window.addEventListener ("load", () => {
         }
     }, 2000)
 })
+
+// cerrar el modal al hacer clic fuera de él
+window.addEventListener('click', (e) => {
+    if (e.target === ventanaModal) {
+        ventanaModal.style.display = "none";
+
+    }
+});

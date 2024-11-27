@@ -2,11 +2,12 @@ html {
   font-size: 62.5%; 
 
 }
+
 // modal carrito
 .ventanaModal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 1050;
   width: 100%;
   height: 100%;
   justify-content: center;

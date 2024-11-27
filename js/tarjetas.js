@@ -6,7 +6,7 @@ export async function obtenerProductos(productosContenedor) {
     const data = await response.json ();
     return data
     } catch (error) {
-     productosContenedor.innerHTML =   `<p class="error_inicializacion">Error al obtener los datos de la API</p>`;
+    productosContenedor.innerHTML =   `<p class="error_inicializacion">Error al obtener los datos de la API</p>`;
     }
 }
 
@@ -61,10 +61,7 @@ export function renderizarButton(data, contadorProductos, carritoCompras) {
                     img: producto.image,
                     subtotal: subtotal,
                 });
-
                 contadorProductos.textContent = carritoCompras.length;
-                console.log(carritoCompras);
-
                 setTimeout(() => {
                     buttonAgregar.textContent = "Agregar al carrito";
                     buttonAgregar.disabled = false;
