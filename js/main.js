@@ -37,10 +37,10 @@ window.addEventListener ("load", () => {
     }, 2000)
 })
 
-// cerrar el modal al hacer clic fuera de él
-window.addEventListener('click', (e) => {
-    if (e.target === ventanaModal) {
-        ventanaModal.style.display = "none";
 
+// Cerrar modal al realizar scroll
+window.addEventListener('scroll', () => {
+    if (ventanaModal.style.display === 'flex') {
+        ventanaModal.style.display = "none"
     }
 });

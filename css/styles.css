@@ -5,16 +5,14 @@ html {
 
 .ventanaModal {
   display: none;
-  position: fixed;
-  z-index: 1050;
+  position: absolute;
+  z-index: 1000;
   width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: auto;
+  justify-content: flex-end;
 }
 .ventanaModal .contenido-modal {
-  display: flex;
+  display: block;
   flex-direction: column;
   background-color: white;
   width: 50%;
@@ -23,6 +21,7 @@ html {
   border-radius: 8px;
   overflow-y: auto;
   max-height: 400px;
+  z-index: 1000;
 }
 .ventanaModal .contenido-modal .carritoVacio {
   display: flex;
