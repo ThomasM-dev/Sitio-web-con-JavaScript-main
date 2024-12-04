@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    
+        <!-- Enlace a Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+        <!-- Aos css -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../imagenes/logo_sitio.webp" type="image/x-icon">
+
+        <!-- Css -->
+        <link rel="stylesheet" href="../css/styles.css">
+
+        <title>Shop Shere | Simulacion Pagos</title>
+</head>
+<body class=".body-formulario">
+    <main>
+        <div id="formulario-pago" class="oculto">
+            <h3>Formulario de Pago</h3>
+            <form id="datos-pago">
+                <label for="nombre-completo" >Nombre Completo:</label>
+                <input type="text" id="nombre-completo" name="nombre-completo"  value="Juan Pérez"><br>
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" value="Pérez"><br>
+
+                <label for="tarjeta">Número de Tarjeta:</label>
+                <input type="text" id="tarjeta" name="tarjeta" value="4111111111111111"><br>
+
+                <label for="fecha-exp">Fecha de Expiración:</label>
+                <input type="text" id="fecha-exp" name="fecha-exp" value="12/25"><br>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" value="123"><br>
+
+                <label for="paypal">Usuario de PayPal:</label>
+                <input type="email" id="paypal" name="paypal" value="usuario@paypal.com"><br>
+
+                <button type="button">Simular Pago</button>
+            </form>
+          </div>
+    </main>
+<footer>
+     <section class="footer">
+        <h2>Contacto</h2>
+        <p>Para consultas, por favor, envía un mensaje a nuestro correo electrónico: 
+                <a href="mailto:educacion@misitioweb.com">educacion@misitioweb.com</a>
+             </p>
+             <p>También puedes seguirnos en nuestras redes sociales para actualizaciones y más información.</p>
+             <div class="iconos-redes-sociales">
+                <a class="icono-twitter" href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i class="bi bi-twitter"></i>
+                </a>
+                <a class="icono-github" href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a class="icono-linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a class="icono-instagram" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+            </div>
+            <p>Creado por Thomas Madariaga (2024) &#169;</p>
+        </section>
+    </footer>
+    <!-- sweetalert2 -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+     <!-- JavaScript de Bootstrap -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+     <!-- JavaScript personalizado -->
+    <script src="../js/datosFormulario.js" type="module"></script>
+</body>
+</html>

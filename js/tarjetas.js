@@ -90,6 +90,3 @@ function validarCantidad(cantidad) {
     return true;
 }
 
-export function contador() {
-    ontadorProductos.textContent = carritoCompras.length;
-}

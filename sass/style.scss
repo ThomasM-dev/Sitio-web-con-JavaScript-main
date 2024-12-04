@@ -623,3 +623,85 @@ button:hover{
       }
   }
 }
+
+
+// seccion simulador de pago
+
+// Estilos generales
+.body-formulario {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+// Formulario de pago
+#formulario-pago {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  h3 {
+    color: #007bff;
+    text-align: center;
+  }
+
+  // Etiquetas de formulario
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  // Entradas del formulario
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+  }
+
+  // Botón de simulación de pago
+  button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #218838;
+    }
+  }
+
+  // Mensaje de precarga (opcional)
+  .mensaje {
+    color: #d9534f;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+// Clase para ocultar el formulario
+.oculto {
+  display: none;
+}
