@@ -23,6 +23,7 @@ html {
     overflow-y: auto;
     max-height: 400px;
     z-index: 1000;
+  }
 
   .carritoVacio {
     display: flex;
@@ -31,38 +32,65 @@ html {
     font-size: 20px;
   }
 
-.btn-carrito {
-  display: flex;
-  justify-content: space-between;
-}
+  .btn-carrito {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #007bff;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:first-of-type {
+      background-color: #28a745;
+      color: white;
+    }
+
+    &:last-of-type {
+      background-color: #dc3545;
+      color: white;
+    }
+  }
+
+  // Media query para pantallas pequeñas
+  @media (max-width: 560px) {
+    .ventanaModal {
+      width: 85%;
+    }
+    .contenido-modal {
+      width: 90%;  
+      padding: 10px;  
+      max-height: 350px;  
+    }
+
+    .carritoVacio {
+      font-size: 25px;  
+    }
+
+    .btn-carrito {
+      flex-direction: column; 
+      align-items: center;  
+    }
+
     button {
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-
-      &:hover {
-        background-color: #007bff;
-        color: white;
-        transform: scale(1.05);
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &:first-of-type {
-        background-color: #28a745;
-        color: white;
-      }
-
-      &:last-of-type {
-        background-color: #dc3545;
-        color: white;
-      }
+      width: 100%;  
+      margin-bottom: 10px; 
+      font-size: 15px;
     }
   }
 }
