@@ -65,7 +65,7 @@ function removerProducto(carritoCompras, index, contadorProductos, tablaProducto
     }).then((result) => {
         if (result.isConfirmed) {
             carritoCompras.splice(index, 1);  // eliminamos el producto usando el índice
-            actualizarCarrito(carritoCompras, contadorProductos, tablaProductos); // actualizar el carrito
+            actualizarCarrito(carritoCompras, contadorProductos, tablaProductos); 
             guardarLocalStorage (carritoCompras)
         }
     });
@@ -91,36 +91,32 @@ function actualizarCarrito (carritoCompras, contadorProductos, tablaProductos) {
 }
 
 export function finalizarPedido(carritoCompras, btnFinalizarPedido) {
-    btnFinalizarPedido.addEventListener ("click", () => {
+    btnFinalizarPedido.addEventListener("click", () => {
         if (carritoCompras.length >= 1) {
             Swal.fire({
-                icon: "success",
                 title: "¡Pedido finalizado con éxito!",
-                html: `<a class="swal2-formulario" href="../pages/simulacion_pago.html" target="_blank" id="ir-a-pagar">Ir a pagar</a>`,
-                showConfirmButton: false,
+                icon: "success",
+                confirmButtonText: "Ir a pagar",
+                showCancelButton: false,
+                showCloseButton: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.open("../pages/simulacion_pago.html", "_blank");
+                    localStorage.removeItem("carritoCompras");
+                    setTimeout (()=>{
+                        location.reload ()
+                    }, 2000)
+                }
             });
-        
-            // Eliminar el carrito de compras del localStorage
-            localStorage.removeItem("carritoCompras");
-        
-            // Agregar un evento de clic al enlace "Ir a pagar"
-            document.getElementById('ir-a-pagar').addEventListener('click', function() {
-                // Ejecutar el setTimeout después de que el usuario haga clic en "Ir a pagar"
-                setTimeout(() => {
-                    location.reload(); // Recarga la página
-                    actualizarCarrito(carritoCompras, contadorProductos, tablaProductos);
-                }, 2000);
-            });
-        }        
-         else {
-            Swal.fire ({
-                title: "Oops el carrito esta vacio",
+        } else {
+            Swal.fire({
+                title: "Oops el carrito está vacío",
                 text: "Ingrese al menos un producto para continuar",
                 icon: "error"
-              });
-            }
-        })
-    }
+            });
+        }
+    });
+}
 
 const guardarLocalStorage = (carritoCompras) => localStorage.setItem("carritoCompras", JSON.stringify(carritoCompras));
 

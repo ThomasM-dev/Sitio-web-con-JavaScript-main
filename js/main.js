@@ -13,20 +13,20 @@ import { cerrarCarrito, mostrarCarrito, finalizarPedido } from "./carrito.js";
 async function init () {
     try {
     // verifica que la varibale exista en el DOM
-    if (productosContenedor != null) {
-        contadorProductos.textContent = carritoCompras.length;
-     // Obtener productos desde la  API
+    if (productosContenedor) {
+    contadorProductos.textContent = carritoCompras.length;
     const productos = await obtenerProductos ()  // Esperar la respuesta de la API
-    // mostrar productos
     renderizarProductos (productos, productosContenedor);
     renderizarButton (productos, contadorProductos, carritoCompras);
-    }
     mostrarCarrito (buttonCarrito, ventanaModal, mensajeCarrito, carritoCompras, tablaProductos);
     cerrarCarrito (btnSeguirComprando, ventanaModal)
     finalizarPedido (carritoCompras, btnFinalizarPedido)
 
+    }
     } catch (error) {
-        productosContenedor.innerHTML = `<p class="error_inicializacion">No se pudieron cargar los productos. Intenta más tarde.</p>`;
+        if (productosContenedor) {
+            productosContenedor.innerHTML = `<p class="error_inicializacion">No se pudieron cargar los productos. Intenta más tarde.</p>`;
+        }
     }
 }
 
@@ -43,7 +43,7 @@ window.addEventListener ("load", () => {
 
 // Cerrar modal al realizar scroll
 window.addEventListener('scroll', () => {
-    if (ventanaModal.style.display === 'flex') {
-        ventanaModal.style.display = "none"
+    if (ventanaModal && ventanaModal.style.display === 'flex') {
+        ventanaModal.style.display = "none";
     }
 });
